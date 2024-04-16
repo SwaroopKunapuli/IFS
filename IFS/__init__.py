@@ -2,6 +2,7 @@
 
 # Add imports here
 from .functions import *
+from .fragmentationgraph import *
 
 
 from ._version import __version__
