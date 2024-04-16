@@ -27,8 +27,7 @@ def FragmentationGraph(parent_ion,n,charges):
     for i in range(0,n):
         d_number_of_moieties=number_of_moieties[:]
         d_number_of_moieties[i]=d_number_of_moieties[i]-1
-        daughter_ions.append([[number_of_moieties],d_number_of_moieties,fundamental_moieties,sum([x*y for x,y in zip
-(d_number_of_moieties,charges)]),levels+1])
+        daughter_ions.append([[number_of_moieties],d_number_of_moieties,fundamental_moieties,sum([x*y for x,y in zip(d_number_of_moieties,charges)]),levels+1])
         del(d_number_of_moieties)
     levels=levels+1
     break_out_flag=False
@@ -42,8 +41,7 @@ def FragmentationGraph(parent_ion,n,charges):
                         k=tuple(d_number_of_moieties)
                         if k not in seen:
                             seen.add(k)
-                            daughter_ions.append([[item[1][:]],d_number_of_moieties,fundamental_moieties,sum([x*y fo
-r x,y in zip(d_number_of_moieties,charges)]),levels+1])
+                            daughter_ions.append([[item[1][:]],d_number_of_moieties,fundamental_moieties,sum([x*y for x,y in zip(d_number_of_moieties,charges)]),levels+1])
                         else:
                             for index, value in enumerate(daughter_ions):
                                 if value[1][:]==d_number_of_moieties:
@@ -58,6 +56,6 @@ r x,y in zip(d_number_of_moieties,charges)]),levels+1])
     return daughter_ions, levels
 
 if __name__== "__main__":
-     FragmentationGraph([[2,2,3],['Ch','U','Cl'],-1,1])
+     FragmentationGraph([[2,2,3],['Ch','U','Cl'],-1,0],3,[1,0,-1])
 
 
