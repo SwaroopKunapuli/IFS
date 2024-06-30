@@ -5,6 +5,7 @@
 
 Welcome to IFS's documentation!
 =========================================================
+Integrated Fragmentation Suite (IFS) is a code written to take advantage of the recently developed computationally cheap Density Functional Approximation methods and Composite methods in their use in generating .rxyz files required for M3C fragmentation simulation of non-covalent clusters.
 
 .. toctree::
    :maxdepth: 2
