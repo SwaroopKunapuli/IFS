@@ -1,7 +1,7 @@
 import itertools
 import os
 
-import pypackmol as pyp
+import IFS.pypackmol as pyp
 
 class Moiety:
     def __init__(self, name: str, charge: float, xyz_file: str) -> None:
@@ -231,9 +231,12 @@ def test_graph_top_parent(moiety_list: list, parent_ion: list) -> None:
     
 if __name__ == "__main__":
     # Building the moieties objects needed about everywhere
-    Cl = Moiety("Cl", -1, "/home/simon/Bureau/Softwares/Fragmentation_Code/Cl.xyz")
-    Urea = Moiety("Urea", 0, "/home/simon/Bureau/Softwares/Fragmentation_Code/Urea.xyz")
-    Choline = Moiety("Choline", 1, "/home/simon/Bureau/Softwares/Fragmentation_Code/Choline.xyz")
+    Cl_xyz_file_location = os.path.join('IFS','data','xyz_files','Cl.xyz')
+    Urea_xyz_file_location = os.path.join('IFS','data','xyz_files','U.xyz')
+    Choline_xyz_file_location = os.path.join('IFS','data','xyz_files','Ch.xyz')
+    Cl = Moiety("Cl", -1, Cl_xyz_file_location)
+    Urea = Moiety("Urea", 0, Urea_xyz_file_location)
+    Choline = Moiety("Choline", 1, Choline_xyz_file_location)
     moiety_list = [Cl, Urea, Choline]
     
     ## Testing things
