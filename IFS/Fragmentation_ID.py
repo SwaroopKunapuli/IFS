@@ -2,7 +2,7 @@ import itertools
 import os
 
 import pypackmol as pyp
-
+something written today 27-06
 class Moiety:
     def __init__(self, name: str, charge: float, xyz_file: str) -> None:
         self.name = name
